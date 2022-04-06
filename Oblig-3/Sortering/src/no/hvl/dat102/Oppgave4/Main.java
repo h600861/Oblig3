@@ -46,7 +46,22 @@ public class Main {
        System.out.println("Minste målte høyde: " + minHoyde);
 
 
+           //Oppgave 4c)
+        int totalHoydeC = 0;
 
+        for(int i = 0; i < 100; i++) {
+            BS_Tre tre2 = new BS_Tre<>(Math.random());
+
+            for(int j = 0; j < 8191; j++) {
+                tre2.leggTil(Math.random());
+            }
+            totalHoydeC += tre2.Hoyde();
+
+        }
+
+        int gjennomsnittC = totalHoydeC / 100;
+
+        System.out.println("Gjennomsnittlig høyde er " + gjennomsnittC);
 
 
 
