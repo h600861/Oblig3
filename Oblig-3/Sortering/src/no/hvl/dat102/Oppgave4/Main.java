@@ -40,7 +40,7 @@ public class Main {
 
         
         System.out.println("Totalt antall noder: " + antNoder);
-        System.out.println("Minimal teoretisk høyde for n noder er: " + tre1.heightComplete(1023));
+        System.out.println("Minimal teoretisk høyde for n noder : " + tre1.heightComplete(1023));
        System.out.println("Maksimal teoretisk høyde er n, som er lik 1023");
         System.out.println("Største målte høyde: " + maksHoyde);
        System.out.println("Minste målte høyde: " + minHoyde);
@@ -61,7 +61,7 @@ public class Main {
 
         int gjennomsnittC = totalHoydeC / 100;
 
-        System.out.println("Gjennomsnittlig høyde er " + gjennomsnittC);
+        System.out.println("Gjennomsnittlig høyde  " + gjennomsnittC);
 
 
 

@@ -50,10 +50,10 @@ public class Oppgave2 {
         bytt(data, midten, min);
 
         int venstre = min + 1;
-        int hoyre = maks;
+        int hoyre = maks - 2;
         while (venstre < hoyre) {
 
-            while (venstre < hoyre && data[venstre].compareTo(p) <= 0) {
+            while (venstre < hoyre && data[venstre].compareTo(p) < 0) {
                 venstre++;
             }
             while (data[hoyre].compareTo(p) > 0) {
@@ -69,10 +69,12 @@ public class Oppgave2 {
 
     // Kvikksortering
     public static <T extends Comparable<T>> void kvikkSort(T [] data, int min, int maks) {
-        if (min < maks) {
+        if ((maks - min + 1)>=20) {
             int posPivot = finnPartisjon(data, min, maks);
             kvikkSort(data, min, posPivot - 1);
             kvikkSort(data, posPivot + 1, maks);
+        }else{
+            sortVedInnsetting(data);
         }
     }
 
@@ -130,28 +132,40 @@ public class Oppgave2 {
 
 
     public static void main(String[] args) {
-       //a)
-        Random tilfeldig = new Random();
-        int n = 32000;
-        int antal = 10;
 
+        // Oppgave2a
+        Random tilfeldig = new Random();
+        int n = 128000;
+        int antal = 10;
+        int p = 10;
 
         Integer[][] a = new Integer[antal][n];
-        Integer [] b = new Integer [n];
+        Integer [] b = new Integer[n];
+
 
         for (int i = 0; i < antal; i++){
             for (int j = 0; j < n; j++){
-                a[i][j] = tilfeldig.nextInt();
-                //System.out.println(a[j][i]);
+                 a[i][j] = tilfeldig.nextInt();
+                //a[i][j] = 9;//System.out.println(a[j][i]);
             }
         }
+
+        //oppgave 2b
+        for (int i = 0; i < n; i++){
+            //b[i] = 10;
+           // b[i] = tilfeldig.nextInt();
+        }
+
+
         double startTid = System.nanoTime();
 
+
         for (int i = 0; i < antal; i++){
-             kvikkSort(a[i], 0, a[i].length - 1);
+            //kvikkSort(a[i], 0, a[i].length - 1);
+            //kvikkSort(b, 0, b.length - 1);
             //utvalgsSort(a[i]);
             //sortVedInnsetting(a[i]);
-            //fletteSort(a[i], 0, a[i].length - 1);
+            // fletteSort(a[i], 0, a[i].length - 1);
         }
         double sluttTid = System.nanoTime();
 
